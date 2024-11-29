@@ -1,5 +1,7 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
-import 'package:grocery_market_app/components/buttons.dart';
+import 'package:grocery_market_app/components/app_btn.dart';
+import 'package:grocery_market_app/constant.dart';
 class Splash extends StatelessWidget {
   const Splash({super.key});
 
@@ -13,27 +15,34 @@ class Splash extends StatelessWidget {
             ClipPath(
               clipper: BezierClipper(),
               child: Container(
-                color:  Color.fromARGB(255, 34, 139, 34),
+                color:  colors,
                 height: 400,
               ),
             ),
             const Text(
-              "Welcome to FreshCart",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              "Welcome to FreshCarts",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 15),
 
-            
-            const Center(
-              child: Text("From fresh produce to everyday essentials, we're here to deliver the best to your door!",
-              style: TextStyle(
-                
-              ),),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 50),
+                child: Expanded(
+                  child: AutoSizeText(
+                     "From fresh produce to everyday essentials, we're here to deliver the best to your door!",
+                    // style: TextStyle(fontSize: 18.0,
+                    // fontWeight: FontWeight.normal,
+                    // color: bg),
+                    style: kTitle(context),
+
+                  ),
+                ),
               ),
+            
+             
+            const SizedBox(height: 60),
 
-            const SizedBox(height: 25),
-
-            Padding(padding: EdgeInsets.symmetric(horizontal: 140),
+            Padding(padding: const EdgeInsets.symmetric(horizontal: 140),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -42,7 +51,7 @@ class Splash extends StatelessWidget {
                   width: 15,
                   height: 15,
                   decoration: BoxDecoration(
-                    color:  Color.fromARGB(255, 34, 139, 34),
+                    color:  colors,
                     borderRadius: BorderRadius.circular(100)
                   ),
                   
@@ -51,13 +60,27 @@ class Splash extends StatelessWidget {
                   width:15,
                   height: 15,
                   decoration: BoxDecoration(
-                    color: Colors.grey,
+                    color: Colors.grey.shade400,
                     borderRadius: BorderRadius.circular(100)
                   ),
                   
                 ),
 
-                Container(
+_buldContianer()
+              ],
+            ),),
+            const SizedBox(height: 60),
+
+             AppBtn(lbl: 'Get Started', onPressed: () {  },textColorState: Colors.white, )
+              
+           ],
+        ),
+      ),
+    );
+  }
+
+Widget _buldContianer(){
+  return                 Container(
                   width: 15,
                   height: 15,
                   decoration: BoxDecoration(
@@ -65,18 +88,9 @@ class Splash extends StatelessWidget {
                     borderRadius: BorderRadius.circular(100)
                   ),
                   
-                ),
-              ],
-            ),),
-            SizedBox(height: 50),
+                );
+}
 
-            Buttons()
-
-           ],
-        ),
-      ),
-    );
-  }
 }
 
 class BezierClipper extends CustomClipper<Path> {

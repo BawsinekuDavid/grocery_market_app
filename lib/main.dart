@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_market_app/pages/splash.dart';
-
+import 'package:grocery_market_app/pages/sign_up_page.dart';
+ 
 void main() {
   runApp(const MyApp());
 }
@@ -11,9 +11,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home:  Splash()
+      home:  SignUpPage()
     );
   }
 }
