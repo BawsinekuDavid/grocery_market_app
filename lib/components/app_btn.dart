@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_market_app/constant.dart';
 
+// ignore: must_be_immutable
 class AppBtn extends StatelessWidget {
   final String lbl;
   Color? textColorState;

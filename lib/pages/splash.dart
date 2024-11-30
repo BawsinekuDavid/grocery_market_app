@@ -71,7 +71,7 @@ _buldContianer()
             ),),
             const SizedBox(height: 60),
 
-             AppBtn(lbl: 'Get Started', onPressed: () {  },textColorState: Colors.white, )
+             AppBtn(lbl: 'Get Started', onPressed: () {},textColorState: Colors.white, )
               
            ],
         ),

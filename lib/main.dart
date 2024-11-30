@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:grocery_market_app/pages/sign_up_page.dart';
+ import 'package:grocery_market_app/pages/splash.dart';
  
 void main() {
   runApp(const MyApp());
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home:  SignUpPage()
+      home:  const Splash(),
     );
   }
 }
